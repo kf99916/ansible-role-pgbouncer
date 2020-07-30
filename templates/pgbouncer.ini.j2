@@ -109,10 +109,10 @@ default_pool_size = {{ pgbouncer_default_pool_size | default(20) }}
 ;min_pool_size = 0
 
 ; how many additional connection to allow in case of trouble
-;reserve_pool_size = 5
+reserve_pool_size = {{ pgbouncer_reserve_pool_size | default(0) }}
 
 ; if a clients needs to wait more than this many seconds, use reserve pool
-;reserve_pool_timeout = 3
+reserve_pool_timeout = {{ pgbouncer_reserve_pool_timeout | default(5) }}
 
 ; how many total connections to a single database to allow from all pools
 ;max_db_connections = 50
